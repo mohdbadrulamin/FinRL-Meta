@@ -10,7 +10,7 @@ lz4
 # plot
 matplotlib
 # data handling
-numpy>=1.17.3
+numpy>=1.26
 pandas>=2.2
 
 #hooks
