@@ -14,7 +14,7 @@ setup(
     version="0.3.6",
     author="Xiao-Yang Liu, Ming Zhu, Jingyang Rui, Hongyang Yang",
     author_email="hy2500@columbia.edu",
-    url="https://github.com/AI4Finance-Foundation/FinRL-Meta",
+    url="https://github.com/mohdbadrulamin/FinRL-Meta.git",
     license="MIT",
     install_requires=REQUIRES,
     description="FinRL­-Meta: A Universe of ­ Market En­vironments for Data­-Driven Financial Reinforcement Learning",
