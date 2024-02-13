@@ -1,13 +1,21 @@
+from __future__ import annotations
+
 from setuptools import find_packages
 from setuptools import setup
 
-REQUIRES = []
+# Read requirements.txt, ignore comments
 try:
-    with open("requirements.txt", "rb") as f:
-        REQUIRES = [line.strip() for line in f.read().decode("utf-8").split("\n")]
-        REQUIRES = [line for line in REQUIRES if "#" not in line]
-except FileNotFoundError as myEx:
-    raise Exception(myEx)
+    REQUIRES = list()
+    f = open("requirements.txt", "rb")
+    for line in f.read().decode("utf-8").split("\n"):
+        line = line.strip()
+        if "#" in line:
+            line = line[: line.find("#")].strip()
+        if line:
+            REQUIRES.append(line)
+except FileNotFoundError:
+    print("'requirements.txt' not found!")
+    REQUIRES = list()
 
 setup(
     name="finrl-meta",
@@ -24,7 +32,6 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
@@ -34,5 +41,5 @@ setup(
     ],
     keywords="Reinforcment Learning",
     platform=["any"],
-    python_requires=">=3.6",
+    python_requires=">=3.7",
 )
