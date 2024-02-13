@@ -18,7 +18,7 @@ except FileNotFoundError:
     REQUIRES = list()
 
 setup(
-    name="finrl-meta",
+    name="finrlmeta",
     version="0.3.6",
     author="Xiao-Yang Liu, Ming Zhu, Jingyang Rui, Hongyang Yang",
     author_email="hy2500@columbia.edu",
